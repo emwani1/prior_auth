@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'welcome#page'
 
   get 'login' ,to: 'welcome#login'
+  resources :pharmacies , :insurances, :doctors
 end
