@@ -1,0 +1,27 @@
+@import "bootstrap";
+
+  .jumbotron {
+    background-image: image-url('apothecary-pharmacy-chemist-mortar-and-pestle-39522.jpeg');
+    background-size: cover;
+    color :#F7F7F7;
+    height: 500px;
+
+  }
+.pharm{
+  position: relative;
+  left: 30px;
+  bottom: 10px;
+  top: 500px;
+  color :#F7F7F7;
+}
+.doc{
+   text-align: center;
+   top: 500px;
+ }
+.insurance{
+  position: relative;
+  left: 1000px;
+  bottom: 10px;
+  top: 500px;
+}
+
