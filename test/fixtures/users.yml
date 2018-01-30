@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  npi: 1
+  name: MyString
+  address: MyString
+  phonenumber: 1
+  zipcode: 1
+  state: MyString
+  password: 
+
+two:
+  npi: 1
+  name: MyString
+  address: MyString
+  phonenumber: 1
+  zipcode: 1
+  state: MyString
+  password: 

@@ -7,8 +7,15 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
+      <% if logged_in? %>
+        <%= link_to "New Request", '#' %>
+      <% end %>
 
     </ul>
+    <% if logged_in? %>
+      <%= link_to 'Logout', logout_path, method: :delete %>
+      <%else%>
     <%= link_to 'Login',login_path, class:'nav-link' %>
+      <% end %>
   </div>
 </nav>

@@ -10,37 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180127190149) do
+ActiveRecord::Schema.define(version: 20180130051729) do
 
-  create_table "doctors", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "npi"
+  create_table "patients", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.date     "dateofbirth"
     t.string   "address"
-    t.string   "state"
-    t.string   "dea"
-    t.integer  "zipcode"
+    t.string   "phonenumber"
+    t.integer  "request_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["request_id"], name: "index_patients_on_request_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.string   "medication"
+    t.string   "directions"
+    t.integer  "quantity"
+    t.integer  "daysupply"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "patient_id"
+    t.index ["patient_id"], name: "index_requests_on_patient_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "insurances", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "pharmacies", force: :cascade do |t|
-    t.integer  "npi"
+  create_table "users", force: :cascade do |t|
+    t.integer  "npi",             limit: 8
     t.string   "name"
     t.string   "address"
-    t.integer  "phonenumber"
+    t.integer  "phonenumber",     limit: 8
     t.integer  "zipcode"
     t.string   "state"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "username"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "role_id"
+    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
 end

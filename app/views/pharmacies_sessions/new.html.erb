@@ -1,0 +1,18 @@
+<h1 align = "center">Pharmacy Log In</h1>
+<div class = "wrapper">
+
+<%= form_for :session, url:pharm_login_path do |f| %>
+  <%= f.label :npi %><br>
+  <%= f.text_field :npi, placeholder: "Enter npi"%>
+  </p>
+  <p>
+    <%= f.label :password%><br>
+    <%= f.password_field :password, autocomplete: "off"%>
+  </p>
+  <%= f.submit "Log in" %>
+
+
+
+<% end %>
+<%= link_to 'Sign up', new_pharmacy_path %>
+</div>

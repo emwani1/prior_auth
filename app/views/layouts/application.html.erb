@@ -10,6 +10,16 @@
 
   <body>
     <%= render 'layouts/navigation' %>
+
+    <% flash.each do |name, msg| %>
+
+      <div class="alert alert-<%= name %>" role="alert">
+        <strong></strong><%= msg %>
+      </div>
+
+
+  <% end %>
+
     <%= yield %>
   </body>
 </html>

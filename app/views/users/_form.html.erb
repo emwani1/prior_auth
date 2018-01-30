@@ -1,0 +1,43 @@
+<% if @user.errors.any? %>
+
+  <h4>The following errors prevented the article from getting created</h4>
+
+  <ul>
+
+    <% @user.errors.full_messages.each do |msg| %>
+
+      <li><%= msg %></li>
+
+    <% end %>
+  </ul>
+
+
+<% end %>
+
+
+
+<div class = "control-group">
+  <%= form_for @user  ,class: "form-horizontal" do |f| %>
+    <%=f.label :username %>
+    <%=f.text_field :username %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+    <%= f.label :role %>
+    <%= f.collection_select :role_id, Role.all, :id, :name %><br>
+    <%= f.label :npi %>
+    <%= f.text_field :npi %><br>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <%= f.label :address %>
+    <%= f.text_field :address %><br>
+    <%= f.label :phonenumber %>
+    <%= f.telephone_field :phonenumber %><br>
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode %><br>
+    <%= f.label :state %>
+    <%= f.text_field :state %><br>
+    <%= f.submit %>
+
+  <%end%>
+
+</div>

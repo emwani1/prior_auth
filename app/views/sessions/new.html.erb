@@ -1,0 +1,18 @@
+<h1 align = "center">Log In</h1>
+<div class = "wrapper">
+
+  <%= form_for :session, url:login_path do |f| %>
+    <%= f.label :username %><br>
+    <%= f.text_field :username, placeholder: "Enter username"%>
+    </p>
+    <p>
+      <%= f.label :password%><br>
+      <%= f.password_field :password, autocomplete: "off"%>
+    </p>
+    <%= f.submit "Log in" %>
+
+
+
+  <% end %>
+  <%= link_to 'Sign up', new_user_path %>
+</div>
