@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :requests
   resources :patients
 
-  re
 
   get 'pharm_login', to: 'pharmacies_sessions#new'
   post 'pharm_login', to: 'pharmacies_sessions#create'
